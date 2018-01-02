@@ -1,0 +1,43 @@
+@charset "utf-8";
+@function rem($px) {
+  @return $px / 32 + rem;
+}
+//@media screen and (max-width: 750px) {
+//  $bgImgUrl: '../imgs/img@2x/';
+//}
+//@media screen and (min-width: 751px) {
+//  $bgImgUrl: '../imgs/img@3x/';
+//}
+
+$orange: #f66d44; //橙色
+$fontColor: #798ba1;  //灰色
+$borderColor: #ddd; //边框颜色
+
+/*浏览器前缀 Start*/
+@mixin prefix($key, $val) {
+  -webkit-#{$key}: $val;
+  -moz-#{$key}: $val;
+  -ms-#{$key}:$val;
+  #{$key}: $val;
+}
+/*浏览器前缀 End*/
+
+@import 'public/reset';  //重置
+@import "public/media"; //ipad处理
+@import "personCenter/personCenter"; //登录
+
+
+/*按钮样式 Start*/
+.btn{
+  text-align: center;
+  border: 0;
+  color: white;
+  border-radius: rem(90);
+  background: linear-gradient(90deg, #f66d44, #f89843);
+  box-shadow: 0 3px 7px #f66d44;
+}
+/*按钮样式 End*/
+
+
+
+

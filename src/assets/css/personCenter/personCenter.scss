@@ -1,0 +1,296 @@
+@charset "utf-8";
+.login-banner {
+  width: rem(750);
+  height: rem(576);
+  background: url('../imgs/img@2x/personCenter/bg_login.png');
+  background-size: cover;
+}
+.login-form {
+  width: rem(590);
+  margin: 0 auto;
+  ul {
+    li {
+      line-height: rem(88);
+      position: relative;
+      input {
+        width: 100%;
+        height: rem(88);
+        text-indent: rem(10);
+        color: $fontColor;
+        line-height: rem(88);
+        border: 0;
+        font-size: rem(30);
+        border-radius: 0;
+        background: none;
+      }
+      &.username,  &.code {
+        border-bottom: 1px $borderColor solid;
+        @include prefix(animation, borderAnimate ease-out .7s forwards);
+        height: rem(91);
+        i {
+          top: rem(30);
+          right: rem(12);
+          display: none;
+        }
+      }
+      &.password {
+        border-bottom: 1px $borderColor solid;
+        @include prefix(animation, borderAnimate ease-out 1s forwards);
+        height: rem(91);
+        i {
+          top: rem(30);
+          right: rem(92);
+          display: none;
+        }
+        img {
+          position: absolute;
+          top: rem(15);
+          right: rem(3);
+          width: rem(72);
+          height: rem(72);
+          display: none;
+        }
+      }
+
+      &.forget {
+        text-align: right;
+        color: $orange;
+        a {
+          color: $orange;
+        }
+      }
+      &.code {
+        input {
+          width: rem(400);
+          float: left;
+        }
+        img {
+          margin-top: rem(14);
+        }
+      }
+      &.loginBtn {
+        text-align: center;
+        button {
+          width: rem(400);
+          height: rem(91);
+          margin: rem(42) 0 rem(80) 0;
+        }
+      }
+      &.forgetBtn {
+        margin: rem(122) 0 rem(80) 0;
+      }
+      &.yzm {
+        border-bottom: 1px $borderColor solid;
+        @include prefix(animation, borderAnimate ease-out .8s forwards);
+        height: rem(89);
+        input {
+          width: rem(400);
+        }
+        button {
+          width: rem(180);
+          height: rem(60);
+          opacity: 0;
+          @include prefix(animation, btnShow1 ease-out .1s .8s forwards);
+        }
+        .btnDisable {
+          border-radius: rem(90);
+          background: linear-gradient(90deg, #c3c3c3, #d0d0d0);
+          box-shadow: none;
+        }
+      }
+      &.register-agree {
+        line-height: rem(50);
+        margin-top: rem(42);
+        color: $fontColor;
+        a {
+          color: $orange;
+        }
+      }
+
+      i {
+        display: inline-block;
+        width: rem(36);
+        height: rem(36);
+        border-radius: 50%;
+        line-height: rem(36);
+        text-align: center;
+        background: #cdced4;
+        color: white;
+        position: absolute;
+      }
+
+    }
+  }
+}
+
+.form-yzm {
+  border-bottom: 2px $orange solid;
+  input {
+    width: rem(400);
+    float: left;
+  }
+
+  button {
+    width: rem(180);
+    height: rem(60);
+  }
+
+}
+
+
+.login-footer {
+  dl {
+    width: rem(590);
+    margin: 0 auto;
+    dt {
+      //float: left;
+      text-align: center;
+      span {
+        color: $fontColor;
+      }
+      a {
+        color: $orange;
+      }
+    }
+    /*
+    dd {
+      float: right;
+      a {
+        color: $orange;
+      }
+    }*/
+  }
+}
+
+
+.register-footer {
+  text-align: center;
+  a {
+    color: $orange;
+  }
+}
+
+
+.regSuccess {
+  dl {
+    dt {
+      width: rem(230);
+      height: rem(230);
+      margin: rem(205) 0 0 rem(265);
+      background: url(../../imgs/img@2x/personCenter/icon_right.png);
+      background-size: contain;
+    }
+    dd {
+      text-align: center;
+      margin-top: rem(54);
+      span {
+        font-size: rem(36);
+        color: #354356;
+      }
+      aside {
+        font-size: rem(28);
+        color: #798ba1;
+        margin-top: rem(24);
+      }
+
+    }
+  }
+  p {
+    text-align: center;
+    margin-top: rem(128);
+    button {
+      display: inline-block;
+      margin-top: rem(128);
+      width: rem(400);
+      height: rem(88);
+    }
+  }
+  footer {
+    width: rem(160);
+    height: rem(42);
+    background: url('../../imgs/img@2x/personCenter/logo.png');
+    background-size: contain;
+    margin: rem(284) 0 rem(60) rem(297);
+
+  }
+
+}
+
+
+.protocol {
+  width:rem(720);
+  margin: 0 auto;
+  color: $fontColor;
+  h1{
+    text-align: center;
+    font-size: rem(42);
+    margin: rem(36) 0;
+  }
+  h2{
+    font-size: rem(30);
+  }
+  p{
+    font-size: rem(24);
+
+    line-height: rem(50);
+    text-indent: rem(24);
+    margin-top: rem(24);
+  }
+  .underline{
+    text-decoration: underline;
+  }
+}
+
+@mixin borderBot {
+  from {
+    width: rem(100);
+    border-bottom: 1px $orange solid;
+  }
+  to {
+    width: 100%;
+    border-bottom: 1px $orange solid;
+  }
+}
+
+;
+@mixin btnShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes borderAnimate {
+  @include borderBot;
+}
+
+@-moz-keyframes borderAnimate {
+  @include borderBot;
+}
+
+@-ms-keyframes borderAnimate {
+  @include borderBot;
+}
+
+@keyframes borderAnimate {
+  @include borderBot;
+}
+
+@-webkit-keyframes btnShow1 {
+  @include btnShow;
+}
+
+@-moz-keyframes btnShow1 {
+  @include btnShow;
+}
+
+@-ms-keyframes btnShow1 {
+  @include btnShow;
+}
+
+@keyframes btnShow1 {
+  @include btnShow;
+}
+

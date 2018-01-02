@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>注册</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../css/app.css">
+</head>
+<body>
+<script>document.querySelector('html').style.fontSize = (document.body.clientWidth / 375 * 16 + 'px');
+window.addEventListener('resize', function () {
+    window.location.reload();
+})
+</script>
+<!-- register-banner Start -->
+<div class="login-banner"></div>
+<!-- register-banner Start -->
+
+<!-- register-form Start-->
+<div class="login-form">
+    <ul>
+        <li class="username">
+            <input type="tel" placeholder="手机号"><i>x</i>
+        </li>
+        <li class="yzm">
+            <input type="text" placeholder="验证码"><button class="btn">获取验证码</button>
+        </li>
+        <li class="password">
+            <input type="password" placeholder="密码"><i>x</i><em><img src="../../img/personCenter/icon_eyes_close@2x.png" alt=""></em>
+        </li>
+        <li class="register-agree">
+            点击“注册”按钮，即表示您同意<a href="">《面包云注册服务协议》</a>
+        </li>
+        <li class="loginBtn">
+            <button class="btn">注册</button>
+        </li>
+    </ul>
+</div>
+<!-- register-form End-->
+
+<!-- register-footer Start-->
+<div class="register-footer">
+    <p><a href="">已有账号</a></p>
+</div>
+<!-- register-footer End-->
+<script src="../../lib/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    $('.btn').on('click', function () {
+        var i = 60;
+        var _this = $(this);
+        var timer = null;
+
+        _this.addClass('btnDisable').attr('disabled', 'disabled');
+        _this.html(i+'`');
+        timer = setInterval(function () {
+            i--;
+            _this.html(i+'`');
+            if(i == 0) {
+                clearInterval(timer);
+                _this.html('获取验证码');
+                _this.removeClass('btnDisable').removeAttr('disabled');
+                i = 60;
+            }
+        }, 1000);
+
+    });
+</script>
+</body>
+</html>

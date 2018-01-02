@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+<script>document.querySelector('html').style.fontSize = (document.body.clientWidth / 375 * 16 + 'px');
+window.addEventListener('resize', function () {
+    window.location.reload();
+})
+</script>
+<!-- personCenterogin-banner Start -->
+<div class="login-banner"></div>
+<!-- personCenterogin-banner Start -->
+
+<!-- personCenterogin-form Start-->
+<div class="login-form">
+    <ul>
+        <li class="username">
+            <input type="tel" placeholder="手机号"><i>x</i>
+        </li>
+        <li class="password">
+            <input type="password" placeholder="密码"><i>x</i><img src="../imgs/img@2x/personCenter/icon_eyes_close.png" alt="">
+        </li>
+        <li class="forget">
+            <a href="">忘记密码？</a>
+        </li>
+        <li class="loginBtn">
+            <button class="btn">登录</button>
+        </li>
+    </ul>
+</div>
+<!-- personCenterogin-form End-->
+
+<!-- personCenterogin-footer Start-->
+<div class="login-footer">
+    <dl>
+        <dt>
+            <span>还没有账号？<a href="">注册</a></span>
+        </dt>
+        <dd>
+            <!-- <a href="">随便看看</a> -->
+        </dd>
+    </dl>
+</div>
+<!-- personCenterogin-footer End-->
+<script src="../../lib/jquery/jquery-3.2.1.min.js"></script>
+<script>
+
+    /* 清除按钮显示/隐藏 Start */
+    $('.username, .password').find('input').on('focus', function () {
+        $(this).nextAll().fadeIn();
+    });
+    /* 清除按钮显示/隐藏 End */
+
+    /* 清除功能 Start */
+    $('.username, .password').find('i').on('click', function () {
+        $(this).prev('input').val('');
+        $(this).next().fadeOut();
+        $(this).fadeOut();
+    })
+    /* 清除功能 End */
+
+    /* 显示/隐藏密码 Start */
+    var flag = true;
+    function showHide(objTri, inputType, imgSrc) {
+        $(objTri).prevAll('input').attr('type', inputType);
+        $(objTri).attr('src', imgSrc);
+        flag = !flag;
+    }
+    $('.password img').on('click', function () {
+        flag? showHide(this, 'text', '../imgs/img@2x/login/icon_eyes_open@2x.png'): showHide(this, 'password', '../imgs/img@2x/login/icon_eyes_close@2x.png');
+    });
+    /* 显示/隐藏密码 End */
+</script>
+</body>
+</html>
